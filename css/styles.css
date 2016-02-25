@@ -2,6 +2,8 @@ h1{
     background-color: gray;
     text-align: center;
     color: yellow !important;
+    border-radius:60px;
+    font-size:60px;
 }
 body{
     background-color:#F0F8FF;
