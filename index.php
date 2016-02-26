@@ -125,7 +125,9 @@ function displayWinners()
     </head>
     <body>
        <img src="img/nae.png"/ alt="Player 1"> <?=displayHand("player1")?> <br>
-       <img src="img/araceli.jpg" alt="Player2"/><?php displayHand("player2")?> <br> 
+       <img src="img/araceli.jpg" alt="Player2"/><?php displayHand("player2")?> <br>
+       <img src="img/nae.png" alt="Player3"/><?php displayHand("player3")?> <br> 
+       <img src="img/araceli.jpg" alt="Player4"/><?php displayHand("player4")?> <br> 
 
     </body>
     <footer>
