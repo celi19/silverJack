@@ -6,7 +6,15 @@ function displayHand(){
     
 }
 function displayWinners(){
-    
+    global $playerInfo;
+
+ $trackWinner = max($playerInfo);
+        
+        foreach($playerInfo as $key => $num)
+        {
+            if($num == $trackWinner)
+                echo $key . " wins " . $num ." points!!". "<br>";
+        }   
 }
 
 ?>
