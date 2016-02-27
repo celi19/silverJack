@@ -56,9 +56,23 @@ $player3 = array();
 $player4 = array();
 
 /*** Salvador's function ***/
-function getHand()
+function getHand($player)
 {
 
+}
+
+/*** Araceli's function ***/
+function displayWinners()
+{
+    global $playerInfo;
+
+    $trackWinner = max($playerInfo);
+        
+    foreach($playerInfo as $key => $num)
+    {
+        if($num == $trackWinner)
+            echo $key . " wins " . $num ." points!!". "<br>";
+    }   
 }
 
 /*** Naelin's function ***/
@@ -77,7 +91,7 @@ function displayHand($player)
     
     /*** Update with getHand() function ***/
     //$cards = getHand($player); // Contains player's cards
-    $cards = $player1; // Temporary
+    $cards = array(); // Temporary;
     echo "Need getHand() function";
     foreach($cards as $card) 
     {
@@ -96,14 +110,6 @@ function displayHand($player)
     echo $playerInfo[$player];
 }
 
-/*** Araceli's function ***/
-function displayWinners()
-{
- 
- 
-    //pull code
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -118,13 +124,13 @@ function displayWinners()
     <body>
        <img src="img/nae.png"/ alt="Player 1"> <?=displayHand("player1")?> <br>
        <img src="img/araceli.jpg" alt="Player2"/><?php displayHand("player2")?> <br>
-       <img src="img/nae.png" alt="Player3"/><?php displayHand("player3")?> <br> 
-       <img src="img/araceli.jpg" alt="Player4"/><?php displayHand("player4")?> <br> 
-
+       <img src="img/salvador.jpg" alt="Player3"/><?php displayHand("player3")?> <br> 
+       <img src="img/karina.jpg" alt="Player4"/><?php displayHand("player4")?> <br> 
+       <?php displayWinners()?>
     </body>
     <footer>
         <hr>
-        &copy; Sanchez,Aquino, Gopar, Ramirez, 2016. <br />
+        &copy; Sanchez, Aquino, Gopar, Ramirez, 2016. <br />
             Disclaimer: The Content of this page might not be accurate. <br />
             <img src="img/csumb-logo.png" alt="CSUMB logo" />
     </footer>
