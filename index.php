@@ -16,7 +16,10 @@ $suits = array("clubs", "diamonds", "hearts", "spades");
 
 // Holds players and their points
 $playerInfo = array("Player1"=>0, "Player2"=>0, "Player3" =>0, "Player4" => 0);
- 
+
+// Array of player's pictures
+$pictures = array("nae.png", "araceli.jpg", "letty.jpeg", "salvador.jpg");
+
 // Initialize deck with values
 $deck = array();
 for($i = 1; $i < 52; $i++) 
@@ -110,6 +113,7 @@ function displayHand($player)
     echo $playerInfo[$player];
 }
 
+
 ?>
 
 <!DOCTYPE html>
@@ -122,10 +126,11 @@ function displayHand($player)
         <h1>SilverJack</h1>
     </head>
     <body>
-       <img src="img/nae.png"/ alt="Player 1"> <?=displayHand("player1")?> <br>
-       <img src="img/araceli.jpg" alt="Player2"/><?php displayHand("player2")?> <br>
-       <img src="img/salvador.jpg" alt="Player3"/><?php displayHand("player3")?> <br> 
-       <img src="img/karina.jpg" alt="Player4"/><?php displayHand("player4")?> <br> 
+       <?= shuffle($pictures); ?>
+       <img src="img/<?=$pictures[0]?>" alt="Player1"> <?=displayHand("player1")?> <br>
+       <img src="img/<?=$pictures[1]?>" alt="Player2"/><?php displayHand("player2")?> <br>
+       <img src="img/<?=$pictures[2]?>" alt="Player3"/><?php displayHand("player3")?> <br> 
+       <img src="img/<?=$pictures[3]?>" alt="Player4"/><?php displayHand("player4")?> <br> 
        <?php displayWinners()?>
     </body>
     <footer>
