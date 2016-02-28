@@ -150,14 +150,25 @@ if($player === "player1"){
 function displayWinners()
 {
     global $playerInfo;
-
-    $trackWinner = max($playerInfo);
+    
+    $trackWinner = 0;
+    //if($trackWinner > 42)
         
     foreach($playerInfo as $key => $num)
     {
-        if($num == $trackWinner)
-            echo $key . " wins " . $num ." points!!". "<br>";
-    }   
+        if($num > $trackWinner && $num < 43){
+            $trackWinner = $num;
+        }
+           
+    } 
+    
+    foreach($playerInfo as $key => $num)
+    {
+        if($trackWinner == $num){
+            echo $key . " wins " . $num . " points!!!";
+        }
+           
+    } 
 }
 
 /*** Naelin's function ***/
