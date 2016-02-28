@@ -212,7 +212,7 @@ function displayHand($player)
     // Update player's points
     $playerInfo[$player] = $points;
     // Display points
-    echo $playerInfo[$player];
+    echo "<span style='color:#930000'/>". "<strong>" . " ". $playerInfo[$player] . "</strong>";
     
 }
  if($player === "player2"){
@@ -233,7 +233,7 @@ function displayHand($player)
     $playerInfo[$player] = $points;
     // Display points
     
-    echo $playerInfo[$player];
+    echo "<span style='color:#930000'/>". "<strong>" . " " .$playerInfo[$player] . "</strong>";
      
 }
 if($player === "player3"){
@@ -253,7 +253,7 @@ if($player === "player3"){
     // Update player's points
     $playerInfo[$player] = $points;
     // Display points
-    echo $playerInfo[$player];
+    echo "<span style='color:#930000'/>". "<strong>" . " " .$playerInfo[$player] ."</strong>";
       
 }
 if($player === "player4"){
@@ -273,7 +273,7 @@ if($player === "player4"){
     // Update player's points
     $playerInfo[$player] = $points;
     // Display points
-    echo $playerInfo[$player];
+    echo "<span style='color:#930000'/>". "<strong>" . " " .$playerInfo[$player]  . "</strong>";
       
 }
 
