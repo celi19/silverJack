@@ -50,3 +50,7 @@ footer{
     /*font-weight:bold;*/
     /*background-color:#306EFF;*/
 }
+#points{
+    color: blue !important;
+    text-align: center;
+}

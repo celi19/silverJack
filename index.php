@@ -1,15 +1,5 @@
 <?php
-/***
 
-1) Each player gets the "right amount" of cards to get close to 42 (20pts)
-2) The cards are not duplicated (15pts)
-3) The total points per player is displayed properly (15pts)
-4) The winner(s) is(are) displayed properly with the earned points (15pts)
-5) Players pictures are displayed RANDOMLY (10pts)
-6) Your contribution in GitHub is similar to your teammates (15pts)
-7) There is an external CSS file with 10 rules (10pts)
-
-***/
 
 // Array of card suits
 $suits = array("clubs", "diamonds", "hearts", "spades"); 
@@ -20,34 +10,9 @@ $playerInfo = array("Player1"=>0, "Player2"=>0, "Player3" =>0, "Player4" => 0);
 // Array of player's pictures
 $pictures = array("nae.png", "araceli.jpg", "letty.jpeg", "sal.jpg");
 
-// Initialize deck with values
 
-/*** Use this to return and remove the top of deck (returns number between 1 and 52)
-$card = array_pop($deck);
-***/
 
-/*** Use this to select random cards 
-$suit = $suits[floor($card / 13)];
-$face = $card % 13;
-if($face == 0) 
-{
-    $face = 13;
-}
-***/
 
-/*** Use this to display random card 
-echo "<img src=cards/" . $suit . "/" . $face . ".png><br>";
-***/
-
-// Array of cards for each player
-/*** Cannot use associative arrays because multiple cards of the same "suit"
-     will be overwritten when assigned a new num
-$player1 = array("suit" => $num);
-$player2 = array("suit" => $num);
-$player3 = array("suit" => $num);
-$player4 = array("suit" => $num);
- ***/
- 
 /*** These should be populated in getHand() ***/
 $player1 = array();
 $player2 = array();
@@ -103,7 +68,7 @@ if($player === "player1"){
 
         echo "<img src=cards/" . $suit . "/" . $face . ".png>";
         $counter2 += $face;
-    //echo "<img src=cards/" . $suit . "/" . $face . ".png><br>";
+   
   }
   }
   if($player === "player3"){
@@ -119,7 +84,7 @@ if($player === "player1"){
     
     echo "<img src=cards/" . $suit . "/" . $face . ".png>";
         $counter3 += $face;
-        //echo "<img src=cards/" . $suit . "/" . $face . ".png><br>";
+      
     }
 
  }
@@ -136,7 +101,7 @@ if($player === "player1"){
     
     echo "<img src=cards/" . $suit . "/" . $face . ".png>";
         $counter4 += $face;
-        //echo "<img src=cards/" . $suit . "/" . $face . ".png><br>";
+        
     }
     }
 
@@ -166,10 +131,10 @@ function displayWinners()
     {
        
         if($trackWinner == $num){
+            echo "<br />";
             echo $key . " wins " . $num . " points!!!" . "<br />";
         }
-        echo "<br />";
-           
+        
     } 
 }
 
@@ -190,12 +155,11 @@ function displayHand($player)
     
     /*** Update with getHand() function ***/
     $cards = getHand($player); // Contains player's cards
-    //$cards = array(); // Temporary;
-   // echo "Need getHand() function";
+    
   
    
     if($player === "player1"){
-    
+    echo "<div id = points >";
    foreach($player1 as $card) 
     {
         $suit = $suits[floor($card / 13)];
@@ -203,7 +167,7 @@ function displayHand($player)
         if($face == 0) 
             $face = 13;
 
-      //  echo "<img src=cards/" . $suit . "/" . $face . ".png>";
+      
         $points = $points + $face; // Add face value to points
     }
   
@@ -211,11 +175,14 @@ function displayHand($player)
     // Update player's points
     $playerInfo[$player] = $points;
     // Display points
-    echo $playerInfo[$player];
+   // echo "<br>";
+    
+    echo " Total: " . $playerInfo[$player];
+    echo "</div>";
     
 }
  if($player === "player2"){
-    
+     echo "<div id = points >";
    foreach($player2 as $card) 
     {
         $suit = $suits[floor($card / 13)];
@@ -223,7 +190,6 @@ function displayHand($player)
         if($face == 0) 
             $face = 13;
 
-       // echo "<img src=cards/" . $suit . "/" . $face . ".png>";
         $points = $points + $face; // Add face value to points
     }
   
@@ -232,11 +198,14 @@ function displayHand($player)
     $playerInfo[$player] = $points;
     // Display points
     
-    echo $playerInfo[$player];
+ 
+    echo " Total: " . $playerInfo[$player];
+    echo "</div>";
+    
      
 }
 if($player === "player3"){
-    
+    echo "<div id = points >";
    foreach($player3 as $card) 
     {
         $suit = $suits[floor($card / 13)];
@@ -244,7 +213,6 @@ if($player === "player3"){
         if($face == 0) 
             $face = 13;
 
-       // echo "<img src=cards/" . $suit . "/" . $face . ".png>";
         $points = $points + $face; // Add face value to points
     }
   
@@ -252,11 +220,14 @@ if($player === "player3"){
     // Update player's points
     $playerInfo[$player] = $points;
     // Display points
-    echo $playerInfo[$player];
+  
+    echo " Total: " . $playerInfo[$player];
+    echo "</div>";
+    
       
 }
 if($player === "player4"){
-    
+     echo "<div id = points >";
    foreach($player4 as $card) 
     {
         $suit = $suits[floor($card / 13)];
@@ -264,7 +235,7 @@ if($player === "player4"){
         if($face == 0) 
             $face = 13;
 
-        //echo "<img src=cards/" . $suit . "/" . $face . ".png>";
+        
         $points = $points + $face; // Add face value to points
     }
   
@@ -272,8 +243,10 @@ if($player === "player4"){
     // Update player's points
     $playerInfo[$player] = $points;
     // Display points
-    echo $playerInfo[$player];
-      
+    
+   
+    echo " Total: " . $playerInfo[$player];
+    echo "</div>";
 }
 
 
