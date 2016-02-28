@@ -21,10 +21,6 @@ $playerInfo = array("Player1"=>0, "Player2"=>0, "Player3" =>0, "Player4" => 0);
 $pictures = array("nae.png", "araceli.jpg", "letty.jpeg", "salvador.jpg");
 
 // Initialize deck with values
-$deck = array();
-for($i = 1; $i < 52; $i++) 
-    $deck[] = $i;
-shuffle($deck); // Shuffle the deck
 
 /*** Use this to return and remove the top of deck (returns number between 1 and 52)
 $card = array_pop($deck);
@@ -66,124 +62,88 @@ shuffle($deck);// shuffles the cards stored in array $deck
 
 /*** Salvador's function ***/
 
-function getHand()
+function getHand($player)
 {   
     global $player1;
     global $player2;
     global $player3;
     global $player4;
-    
-     $count1 = 0;
-     while($count1 <= 35)//generates random cards fro player1
-     {  
-         addCardtoPlayer(1);
-         foreach($player1 as $item)
-         {
-                 $count1 += $item;
-                 //echo "count1: ";
-                 //echo $count1;
-                
-                if($count1 >= 35)
-                    break;
-         }
-     }
-     echo "<br />";
-     $count2 = 0;
-     while($count2 <= 35)//generates random cards fro player2
-     {  
-         addCardtoPlayer(2);
-         foreach($player2 as $item)
-         {
-                 $count2 += $item;
-                //echo "count2: ";
-                //echo $count2;
-                if($count2 >= 35)
-                    break;
-         }
-     }
-     echo "<br />";
-     $count3 = 0;
-     while($count3 <= 35)//generates random cards fro player3
-     {  
-         addCardtoPlayer(3);
-         foreach($player3 as $item)
-         {
-                 $count3 += $item;
-                //echo "count3: ";
-                //echo $count3;
-                if($count3 >= 35)
-                    break;
-         }
-     }
-     echo "<br />";
-     $count4 = 0;
-     while($count4 <= 35)//generates random cards fro player3
-     {  
-         addCardtoPlayer(4);
-         foreach($player4 as $item)
-         {
-                 $count4 += $item;
-                //echo "count4: ";
-                //echo $count4;
-                if($count4 >= 35)
-                    break;
-         }
-     }
-}
-function addCardtoPlayer($player)
-{
-    global $player1;
-    global $player2;
-    global $player3;
-    global $player4;
-    
+    global $suits;
     global $deck;
-    $suit = array("clubs", "diamonds", "hearts", "spades");//constains the names of the 4 folders designated to a card suit
-    $cardSuit = $suit[floor($card / 13)];//gets the suit of the card
-    $randomCard = rand(1,13);//creates a random card
-    $cardValue = $card % 13;//gets the the value the card
-    if ($cardValue == 0)
-    {//makes sure that card 0 isn't picked because the selected cards start at value one.
-        $cardValue = rand(1,13);//creates random card value
-        
-        
-        if(array_search($cardValue,$deck) != false)
-        {
-           foreach (array_keys($deck, $cardValue) as $key) // adds card to corresponding player(1-4) and then deletes the card from the deck
-           {    
-                if($player == 1)
-                {   
-                    array_push($player1,$deck[$key]);
-                    unset($deck[$key]);
-                }
-                if($player == 2)
-                {   
-                    array_push($player2,$deck[$key]);
-                    unset($deck[$key]);
-                }
-                if($player == 3)
-                {   
-                    array_push($player3,$deck[$key]);
-                    unset($deck[$key]);
-                }
-                if($player == 4)
-                {   
-                    array_push($player4,$deck[$key]);
-                    unset($deck[$key]);
-                }
-                
-                
-                
-           }
-        }
-    }
-    
     
    
-    //echo "<img src=cards/$cardSuit/$cardValue.png>";
+if($player === "player1"){
     
+    $counter1 = 0;
+    while($counter1 <= 35){  
+      
+        $card = array_pop($deck);
+        $suit = $suits[floor($card / 13)];
+        $face = $card % 13;
+        if($face == 0) 
+            $face = 13;
+        $player1[] = $card;
+         echo "<img src=cards/" . $suit . "/" . $face . ".png>";
+         
+         $counter1 += $face;
+ 
+  }
     
+  }
+  
+  if($player === "player2"){
+      $counter2 = 0;
+  while($counter2 <= 35){  
+        $card = array_pop($deck);
+        $suit = $suits[floor($card / 13)];
+        $face = $card % 13;
+        if($face == 0) 
+            $face = 13;
+        $player2[] = $card;
+
+        echo "<img src=cards/" . $suit . "/" . $face . ".png>";
+        $counter2 += $face;
+    //echo "<img src=cards/" . $suit . "/" . $face . ".png><br>";
+  }
+  }
+  if($player === "player3"){
+      $counter3 = 0;
+    while($counter3 <= 35){  
+      
+      $card = array_pop($deck);
+        $suit = $suits[floor($card / 13)];
+        $face = $card % 13;
+        if($face == 0) 
+         $face = 13;
+        $player3[] = $card;
     
+    echo "<img src=cards/" . $suit . "/" . $face . ".png>";
+        $counter3 += $face;
+        //echo "<img src=cards/" . $suit . "/" . $face . ".png><br>";
+    }
+
+ }
+    if($player === "player4"){
+      $counter4 = 0;
+    while($counter4 <= 35){  
+      
+      $card = array_pop($deck);
+        $suit = $suits[floor($card / 13)];
+        $face = $card % 13;
+        if($face == 0) 
+         $face = 13;
+        $player4[] = $card;
+    
+    echo "<img src=cards/" . $suit . "/" . $face . ".png>";
+        $counter4 += $face;
+        //echo "<img src=cards/" . $suit . "/" . $face . ".png><br>";
+    }
+    }
+
+
+
+
+
 }
 
 /*** Araceli's function ***/
@@ -205,6 +165,7 @@ function displayHand($player)
 {
     // Access to array of suits
     global $suits;
+   
     
     // Access player card arrays
     global $player1, $player2, $player3, $player4;
@@ -215,27 +176,94 @@ function displayHand($player)
     $points = $playerInfo[$player]; // Initialize points with player's current points
     
     /*** Update with getHand() function ***/
-    //$cards = getHand($player); // Contains player's cards
-    $cards = array(); // Temporary;
-    echo "Need getHand() function";
-    foreach($cards as $card) 
+    $cards = getHand($player); // Contains player's cards
+    //$cards = array(); // Temporary;
+   // echo "Need getHand() function";
+  
+   
+    if($player === "player1"){
+    
+   foreach($player1 as $card) 
     {
         $suit = $suits[floor($card / 13)];
         $face = $card % 13;
         if($face == 0) 
             $face = 13;
 
-        echo "<img src=cards/" . $suit . "/" . $face . ".png>";
+      //  echo "<img src=cards/" . $suit . "/" . $face . ".png>";
         $points = $points + $face; // Add face value to points
     }
+  
     
     // Update player's points
     $playerInfo[$player] = $points;
     // Display points
     echo $playerInfo[$player];
+    
+}
+ if($player === "player2"){
+    
+   foreach($player2 as $card) 
+    {
+        $suit = $suits[floor($card / 13)];
+        $face = $card % 13;
+        if($face == 0) 
+            $face = 13;
+
+       // echo "<img src=cards/" . $suit . "/" . $face . ".png>";
+        $points = $points + $face; // Add face value to points
+    }
+  
+    
+    // Update player's points
+    $playerInfo[$player] = $points;
+    // Display points
+    echo $playerInfo[$player];
+     
+}
+if($player === "player3"){
+    
+   foreach($player3 as $card) 
+    {
+        $suit = $suits[floor($card / 13)];
+        $face = $card % 13;
+        if($face == 0) 
+            $face = 13;
+
+       // echo "<img src=cards/" . $suit . "/" . $face . ".png>";
+        $points = $points + $face; // Add face value to points
+    }
+  
+    
+    // Update player's points
+    $playerInfo[$player] = $points;
+    // Display points
+    echo $playerInfo[$player];
+      
+}
+if($player === "player4"){
+    
+   foreach($player4 as $card) 
+    {
+        $suit = $suits[floor($card / 13)];
+        $face = $card % 13;
+        if($face == 0) 
+            $face = 13;
+
+        //echo "<img src=cards/" . $suit . "/" . $face . ".png>";
+        $points = $points + $face; // Add face value to points
+    }
+  
+    
+    // Update player's points
+    $playerInfo[$player] = $points;
+    // Display points
+    echo $playerInfo[$player];
+      
 }
 
 
+}
 ?>
 
 <!DOCTYPE html>
