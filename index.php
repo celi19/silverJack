@@ -18,7 +18,7 @@ $suits = array("clubs", "diamonds", "hearts", "spades");
 $playerInfo = array("Player1"=>0, "Player2"=>0, "Player3" =>0, "Player4" => 0);
 
 // Array of player's pictures
-$pictures = array("nae.png", "araceli.jpg", "letty.jpeg", "salvador.jpg");
+$pictures = array("nae.png", "araceli.jpg", "letty.jpeg", "sal.jpg");
 
 // Initialize deck with values
 
@@ -277,11 +277,11 @@ if($player === "player4"){
     </head>
     <body>
 
-       <?=  shuffle($pictures); ?>
-       <img src="img/<?=$pictures[0]?>" alt="Player1"> <?=displayHand("player1")?> <br>
-       <img src="img/<?=$pictures[1]?>" alt="Player2"/><?php displayHand("player2")?> <br>
-       <img src="img/<?=$pictures[2]?>" alt="Player3"/><?php displayHand("player3")?> <br> 
-       <img src="img/<?=$pictures[3]?>" alt="Player4"/><?php displayHand("player4")?> <br> 
+       <?=shuffle($pictures)?>
+       <img class="piclist" src="img/<?=$pictures[0]?>" alt="Player1" height="120" width="120" hspace="20"/><?=displayHand("player1")?><br/><br>
+       <img class="piclist" src="img/<?=$pictures[1]?>" alt="Player2" height="120" width="120" hspace="20"/><span class="playerList"><?php displayHand("player2")?><br/><br>
+       <img class="piclist" src="img/<?=$pictures[2]?>" alt="Player3" height="120" width="120" hspace="20"/><span class="playerList"><?php displayHand("player3")?><br/><br> 
+       <img class="piclist" src="img/<?=$pictures[3]?>" alt="Player4" height="120" width="120" hspace="20"/><span class="playerList"><?php displayHand("player4")?><br/><br> 
        <?php displayWinners()?>
     </body>
     <footer>

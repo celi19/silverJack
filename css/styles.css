@@ -5,8 +5,19 @@ h1{
     border-radius:60px;
     font-size:60px;
 }
+.piclist{
+   border-style: solid;
+    border-width: 2px;
+    border-color:green;
+    alignment-adjust:left;
+}
+.playerList{
+    text-align:right;
+    font-size:20px;
+}
 body{
     background-color:#F0F8FF;
+    text-align:center;
     /*background-image: url("../img/cards2.png");*/
 }
 footer{
