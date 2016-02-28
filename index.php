@@ -294,7 +294,15 @@ if($player === "player4"){
        <img src="img/<?=$pictures[2]?>" alt="Player3"/><?php displayHand("player3")?> <br> 
        <img src="img/<?=$pictures[3]?>" alt="Player4"/><?php displayHand("player4")?> <br> 
        <?php displayWinners()?>
+       
     </body>
+    <table  align = "center" style = "background-color: green;">
+           <tr>
+               <td>
+                   <a href = "https://cst336-rami7213.c9users.io/labs/lab3/silverJack/index.php">Play again!</a>
+               </td>
+           </tr>
+       </table>
     <footer>
         <hr>
         &copy; Sanchez, Aquino, Gopar, Ramirez, 2016. <br />
