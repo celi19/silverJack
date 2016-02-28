@@ -137,7 +137,7 @@ function displayWinners()
 
             echo "<br />";
             //echo $key . " wins " . $num . " points!!!" . "<br />";
-            echo  "<span style='color:#930000'/>". "<strong>".$key . " wins " . $num . " points!!!" . "</strong>"."<br />";
+            echo  "<span style='color:#800000'/>". "<strong>".$key . " wins " . $num . " points!!!" . "</strong>"."<br />";
 
            
         }

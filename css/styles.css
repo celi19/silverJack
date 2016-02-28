@@ -58,5 +58,7 @@ footer{
 }
 #points{
     color: red !important;
+    font-weight:20px;
     text-align: center;
+    font-size:25px;
 }
