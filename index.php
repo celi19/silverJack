@@ -19,7 +19,7 @@ $player2 = array();
 $player3 = array();
 $player4 = array();
 $deck = array();
-for ($i = 1; $i <= 52; $i++ )// stores cards in array $deck
+for ($i = 1; $i <= 51; $i++ )// stores cards in array $deck
 {
     $deck[] = $i;
 }
@@ -160,10 +160,7 @@ function displayHand($player)
     
     $points = $playerInfo[$player]; // Initialize points with player's current points
     
-    /*** Update with getHand() function ***/
     $cards = getHand($player); // Contains player's cards
-    
-  
    
     if($player === "player1"){
     echo "<span id = points >";
@@ -285,7 +282,7 @@ if($player === "player4"){
     <table  align = "center" color="white">
            <tr>
                <td>
-                   <a id="button" href = "https://cst336-sanc8629.c9users.io/labs/Lab3/silverJack/">Play again!</a>
+                   <a href="javascript:history.go(0)" id="button">Play again!</A>
                </td>
            </tr>
            
