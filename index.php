@@ -118,25 +118,28 @@ function displayWinners()
     
     $trackWinner = 0;
     //if($trackWinner > 42)
-        
+        $sum = 0;
     foreach($playerInfo as $key => $num)
     {
         if($num > $trackWinner && $num < 43){
             $trackWinner = $num;
         }
+        $sum += $num;
            
     } 
+    $sum -= $trackWinner;
     
     foreach($playerInfo as $key => $num)
     {
        
         if($trackWinner == $num){
 
+
             echo "<br />";
             //echo $key . " wins " . $num . " points!!!" . "<br />";
             echo  "<span style='color:#930000'/>". "<strong>".$key . " wins " . $num . " points!!!" . "</strong>"."<br />";
-           
 
+           
         }
         
     } 
