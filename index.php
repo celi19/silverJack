@@ -57,11 +57,133 @@ $player1 = array();
 $player2 = array();
 $player3 = array();
 $player4 = array();
+$deck = array();
+for ($i = 1; $i <= 52; $i++ )// stores cards in array $deck
+{
+    $deck[] = $i;
+}
+shuffle($deck);// shuffles the cards stored in array $deck
 
 /*** Salvador's function ***/
-function getHand($player)
-{
 
+function getHand()
+{   
+    global $player1;
+    global $player2;
+    global $player3;
+    global $player4;
+    
+     $count1 = 0;
+     while($count1 <= 35)//generates random cards fro player1
+     {  
+         addCardtoPlayer(1);
+         foreach($player1 as $item)
+         {
+                 $count1 += $item;
+                 //echo "count1: ";
+                 //echo $count1;
+                
+                if($count1 >= 35)
+                    break;
+         }
+     }
+     echo "<br />";
+     $count2 = 0;
+     while($count2 <= 35)//generates random cards fro player2
+     {  
+         addCardtoPlayer(2);
+         foreach($player2 as $item)
+         {
+                 $count2 += $item;
+                //echo "count2: ";
+                //echo $count2;
+                if($count2 >= 35)
+                    break;
+         }
+     }
+     echo "<br />";
+     $count3 = 0;
+     while($count3 <= 35)//generates random cards fro player3
+     {  
+         addCardtoPlayer(3);
+         foreach($player3 as $item)
+         {
+                 $count3 += $item;
+                //echo "count3: ";
+                //echo $count3;
+                if($count3 >= 35)
+                    break;
+         }
+     }
+     echo "<br />";
+     $count4 = 0;
+     while($count4 <= 35)//generates random cards fro player3
+     {  
+         addCardtoPlayer(4);
+         foreach($player4 as $item)
+         {
+                 $count4 += $item;
+                //echo "count4: ";
+                //echo $count4;
+                if($count4 >= 35)
+                    break;
+         }
+     }
+}
+function addCardtoPlayer($player)
+{
+    global $player1;
+    global $player2;
+    global $player3;
+    global $player4;
+    
+    global $deck;
+    $suit = array("clubs", "diamonds", "hearts", "spades");//constains the names of the 4 folders designated to a card suit
+    $cardSuit = $suit[floor($card / 13)];//gets the suit of the card
+    $randomCard = rand(1,13);//creates a random card
+    $cardValue = $card % 13;//gets the the value the card
+    if ($cardValue == 0)
+    {//makes sure that card 0 isn't picked because the selected cards start at value one.
+        $cardValue = rand(1,13);//creates random card value
+        
+        
+        if(array_search($cardValue,$deck) != false)
+        {
+           foreach (array_keys($deck, $cardValue) as $key) // adds card to corresponding player(1-4) and then deletes the card from the deck
+           {    
+                if($player == 1)
+                {   
+                    array_push($player1,$deck[$key]);
+                    unset($deck[$key]);
+                }
+                if($player == 2)
+                {   
+                    array_push($player2,$deck[$key]);
+                    unset($deck[$key]);
+                }
+                if($player == 3)
+                {   
+                    array_push($player3,$deck[$key]);
+                    unset($deck[$key]);
+                }
+                if($player == 4)
+                {   
+                    array_push($player4,$deck[$key]);
+                    unset($deck[$key]);
+                }
+                
+                
+                
+           }
+        }
+    }
+    
+    
+   
+    //echo "<img src=cards/$cardSuit/$cardValue.png>";
+    
+    
+    
 }
 
 /*** Araceli's function ***/
@@ -126,7 +248,8 @@ function displayHand($player)
         <h1>SilverJack</h1>
     </head>
     <body>
-       <?= shuffle($pictures); ?>
+
+       <?=  shuffle($pictures); ?>
        <img src="img/<?=$pictures[0]?>" alt="Player1"> <?=displayHand("player1")?> <br>
        <img src="img/<?=$pictures[1]?>" alt="Player2"/><?php displayHand("player2")?> <br>
        <img src="img/<?=$pictures[2]?>" alt="Player3"/><?php displayHand("player3")?> <br> 
