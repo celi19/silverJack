@@ -131,8 +131,12 @@ function displayWinners()
     {
        
         if($trackWinner == $num){
+
             echo "<br />";
             echo $key . " wins " . $num . " points!!!" . "<br />";
+            echo  "<span style='color:#930000'/>". "<strong>".$key . " wins " . $num . " points!!!" . "</strong>"."<br />";
+           
+
         }
         
     } 
@@ -257,29 +261,30 @@ if($player === "player4"){
         <title>SilverJack</title>
         <link href="css/styles.css" rel="stylesheet" />
 
-        
         <h1>SilverJack</h1>
+        
     </head>
     <body>
        <?=shuffle($pictures)?>
-       <img class="piclist" src="img/<?=$pictures[0]?>" alt="Player1" height="120" width="120" hspace="20" /><span class="playerList"><?=displayHand("player1")?><br/><br>
-       <img class="piclist" src="img/<?=$pictures[1]?>" alt="Player2" height="120" width="120" hspace="20"/><span class="playerList"><?php displayHand("player2")?><br/><br>
-       <img class="piclist" src="img/<?=$pictures[2]?>" alt="Player3" height="120" width="120" hspace="20"/><span class="playerList"><?php displayHand("player3")?><br/><br> 
-       <img class="piclist" src="img/<?=$pictures[3]?>" alt="Player4" height="120" width="120" hspace="20"/><span class="playerList"><?php displayHand("player4")?><br/><br> 
-       <span id="blah" color"red"><?php displayWinners()?></span>
+       <img class="piclist" src="img/<?=$pictures[0]?>" alt="Player1" height="120" width="120" hspace="20" /><span class="playerList"> <?=displayHand("player1")?><br/><br>
+       <img class="piclist" src="img/<?=$pictures[1]?>" alt="Player2" height="120" width="120" hspace="20"/><span class="playerList"> <?php displayHand("player2")?><br/><br>
+       <img class="piclist" src="img/<?=$pictures[2]?>" alt="Player3" height="120" width="120" hspace="20"/><span class="playerList"> <?php displayHand("player3")?><br/><br> 
+       <img class="piclist" src="img/<?=$pictures[3]?>" alt="Player4" height="120" width="120" hspace="20"/><span class="playerList"> <?php displayHand("player4")?>
+       <span id="winner" color"green"><?php displayWinners()?></span>
        
     </body>
-    <br/>
-    <br/>
-    <table  align = "center" font-color="white">
+    <table  align = "center" color="white">
            <tr>
                <td>
                    <a id="button" href = "https://cst336-sanc8629.c9users.io/labs/Lab3/silverJack/">Play again!</a>
                </td>
            </tr>
+           
        </table>
-       <br/>
-       <br/>
+       <figure>
+           <img src="img/cards2.png" width="200" height="200" hspace="240"></img>
+           <img id="p2" src="img/cards3.png" width="200" height="200"></img>
+       </figure>
     <footer>
         <hr>
         &copy; Sanchez, Aquino, Gopar, and Ramirez, 2016. <br />
