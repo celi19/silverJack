@@ -287,22 +287,25 @@ if($player === "player4"){
         <h1>SilverJack</h1>
     </head>
     <body>
-
        <?=shuffle($pictures)?>
-       <img class="piclist" src="img/<?=$pictures[0]?>" alt="Player1" height="120" width="120" hspace="20" VSPACE=10/><span class="playerList" VSPACE=10><?=displayHand("player1")?><br/><br>
+       <img class="piclist" src="img/<?=$pictures[0]?>" alt="Player1" height="120" width="120" hspace="20" /><span class="playerList"><?=displayHand("player1")?><br/><br>
        <img class="piclist" src="img/<?=$pictures[1]?>" alt="Player2" height="120" width="120" hspace="20"/><span class="playerList"><?php displayHand("player2")?><br/><br>
        <img class="piclist" src="img/<?=$pictures[2]?>" alt="Player3" height="120" width="120" hspace="20"/><span class="playerList"><?php displayHand("player3")?><br/><br> 
        <img class="piclist" src="img/<?=$pictures[3]?>" alt="Player4" height="120" width="120" hspace="20"/><span class="playerList"><?php displayHand("player4")?><br/><br> 
-       <span id="l" VSPACE=10><?php displayWinners()?></span>
+       <span id="blah" color"red"><?php displayWinners()?></span>
        
     </body>
-    <table  align = "center" >
+    <br/>
+    <br/>
+    <table  align = "center" font-color="white">
            <tr>
                <td>
                    <a id="button" href = "https://cst336-sanc8629.c9users.io/labs/Lab3/silverJack/">Play again!</a>
                </td>
            </tr>
        </table>
+       <br/>
+       <br/>
     <footer>
         <hr>
         &copy; Sanchez, Aquino, Gopar, and Ramirez, 2016. <br />

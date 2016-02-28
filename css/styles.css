@@ -1,39 +1,51 @@
 h1{
     background-color: gray;
     text-align: center;
-    color: yellow !important;
+    color: #990012 !important;
     border-radius:60px;
     font-size:60px;
 }
 .piclist{
    border-style: solid;
     border-width: 2px;
-    border-color:green;
+    border-color:gray;
+    background-color:red;
     alignment-adjust:left;
 }
 .playerList{
     text-align:right;
     font-size:20px;
 }
-#l{
+#blah{
     text-align:right;
+    font-size:30px;
+    background-color: #66FF99;
+    border-radius:12px;
 }
 #button{
-    background-color:#99FFCC;
-    border: 1px groove #FFA5A5;
+    background-color:red;
+    border: 1px groove black;
     height:50px;
    width: 50px;
    font-size:30px;
    text-align:center;
+   border-radius:10px;
+}
+figure{
+    text-align:left;
+    border:10px;
 }
 body{
-    /*background-color:#F0F8FF;*/
+    /*background-color:#dc6a83;*/
     text-align:center;
-    background-image: url("../img/cards4.png");
+    background-image: url("../img/card.jpg");
+    margin: 0 auto;
+     font-family:Verdana, Arial, Georgia;
+    
 }
 footer{
     text-align:center;
-    font-size:15px;
+    font-size:16px;
     /*color:#306EFF;*/
     /*font-weight:bold;*/
     /*background-color:#306EFF;*/
