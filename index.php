@@ -197,8 +197,6 @@ function displayHand($player)
     // Update player's points
     $playerInfo[$player] = $points;
     // Display points
-    
- 
     echo " Total: " . $playerInfo[$player];
     echo "</div>";
     
