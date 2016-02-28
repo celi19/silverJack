@@ -150,14 +150,25 @@ if($player === "player1"){
 function displayWinners()
 {
     global $playerInfo;
-
-    $trackWinner = max($playerInfo);
+    
+    $trackWinner = 0;
+    //if($trackWinner > 42)
         
     foreach($playerInfo as $key => $num)
     {
-        if($num == $trackWinner)
-            echo $key . " wins " . $num ." points!!". "<br>";
-    }   
+        if($num > $trackWinner && $num < 43){
+            $trackWinner = $num;
+        }
+           
+    } 
+    
+    foreach($playerInfo as $key => $num)
+    {
+        if($trackWinner == $num){
+            echo $key . " wins " . $num . " points!!!";
+        }
+           
+    } 
 }
 
 /*** Naelin's function ***/
@@ -283,7 +294,15 @@ if($player === "player4"){
        <img class="piclist" src="img/<?=$pictures[2]?>" alt="Player3" height="120" width="120" hspace="20"/><span class="playerList"><?php displayHand("player3")?><br/><br> 
        <img class="piclist" src="img/<?=$pictures[3]?>" alt="Player4" height="120" width="120" hspace="20"/><span class="playerList"><?php displayHand("player4")?><br/><br> 
        <?php displayWinners()?>
+       
     </body>
+    <table  align = "center" style = "background-color: green;">
+           <tr>
+               <td>
+                   <a href = "https://cst336-rami7213.c9users.io/labs/lab3/silverJack/index.php">Play again!</a>
+               </td>
+           </tr>
+       </table>
     <footer>
         <hr>
         &copy; Sanchez, Aquino, Gopar, Ramirez, 2016. <br />
