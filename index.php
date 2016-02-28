@@ -164,9 +164,11 @@ function displayWinners()
     
     foreach($playerInfo as $key => $num)
     {
+       
         if($trackWinner == $num){
-            echo $key . " wins " . $num . " points!!!";
+            echo $key . " wins " . $num . " points!!!" . "<br />";
         }
+        echo "<br />";
            
     } 
 }
@@ -229,6 +231,7 @@ function displayHand($player)
     // Update player's points
     $playerInfo[$player] = $points;
     // Display points
+    
     echo $playerInfo[$player];
      
 }
