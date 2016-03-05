@@ -128,7 +128,7 @@ function displayWinners()
            
     } 
     $sum -= $trackWinner;
-    
+    if($sum > 0){
     foreach($playerInfo as $key => $num)
     {
        
@@ -143,6 +143,10 @@ function displayWinners()
         }
         
     } 
+    }
+    else{
+        echo "No winners!";
+    }
 }
 
 /*** Naelin's function ***/
